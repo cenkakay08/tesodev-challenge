@@ -68,6 +68,7 @@ const Search = () => {
     setIsSortOpened(null);
   };
   const handleInputChange = (e) => {
+    console.log("buraya ulaştım");
     const filtered = untouchedEntries.filter(
       (entry) =>
         entry[0].toLowerCase().includes(e.target.value.toLowerCase()) ||
@@ -79,6 +80,7 @@ const Search = () => {
     } else {
       setErrorColor(false);
     }
+
     setEntries(filtered);
     paginate(1);
   };
@@ -114,6 +116,7 @@ const Search = () => {
             errorColor={errorColor}
             defaultValue={searchTerm}
             onChange={handleInputChange}
+            key={searchTerm}
           ></StyledSubInput>
           <button id="SubSearchButton">Search</button>
         </div>
