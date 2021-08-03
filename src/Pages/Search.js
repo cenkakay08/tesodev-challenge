@@ -68,7 +68,6 @@ const Search = () => {
     setIsSortOpened(null);
   };
   const handleInputChange = (e) => {
-    console.log("buraya ulaştım");
     const filtered = untouchedEntries.filter(
       (entry) =>
         entry[0].toLowerCase().includes(e.target.value.toLowerCase()) ||
