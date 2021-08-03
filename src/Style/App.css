@@ -32,7 +32,7 @@
   font-family: Roboto;
   font-style: normal;
   font-weight: bold;
-  font-size: 14px;
+  font-size: 1vw;
   line-height: 16px;
   margin-left: 19vw;
   margin-right: 10vw;
@@ -52,7 +52,7 @@
   font-family: Roboto;
   font-style: normal;
   font-weight: bold;
-  font-size: 18px;
+  font-size: 1vw;
   line-height: 21px;
 
   color: #ffffff;
@@ -76,7 +76,7 @@
 }
 
 .SuggestionContainer {
-  margin-top: 1vh;
+  margin-top: 2vh;
 }
 .SuggestionContainer:hover {
   background: #c4c4c4;
@@ -93,7 +93,7 @@
   font-family: Roboto;
   font-style: normal;
   font-weight: bold;
-  font-size: 18px;
+  font-size: 1vw;
   line-height: 21px;
   padding-top: 1vh;
   padding-left: 3vw;
@@ -104,7 +104,7 @@
   font-family: Roboto;
   font-style: normal;
   font-weight: bold;
-  font-size: 18px;
+  font-size: 1vw;
   line-height: 21px;
   padding-right: 6vw;
   padding-top: 1vh;
@@ -118,7 +118,7 @@
   font-family: Roboto;
   font-style: normal;
   font-weight: bold;
-  font-size: 12px;
+  font-size: 0.7vw;
   line-height: 14px;
   padding-left: 3vw;
   padding-top: 1vh;
@@ -134,7 +134,7 @@
   font-family: Roboto;
   font-style: normal;
   font-weight: bold;
-  font-size: 12px;
+  font-size: 1vw;
   line-height: 14px;
   text-decoration: none;
   color: #000000;
@@ -146,7 +146,7 @@
   display: flex; /* create nested flex container */
   flex-wrap: wrap; /* enable flex items to wrap */
   justify-content: center;
-  height: 5vh;
+  height: 7vh;
 }
 
 #MainSearchContainer {
@@ -191,7 +191,7 @@
   font-family: Roboto;
   font-style: normal;
   font-weight: bold;
-  font-size: 18px;
+  font-size: 1vw;
   line-height: 21px;
 
   color: #ffffff;
@@ -207,7 +207,7 @@
   font-family: Roboto;
   font-style: normal;
   font-weight: bold;
-  font-size: 18px;
+  font-size: 1vw;
   line-height: 21px;
 
   color: #ffffff;
@@ -242,7 +242,7 @@
   font-family: Roboto;
   font-style: normal;
   font-weight: bold;
-  font-size: 18px;
+  font-size: 1vw;
   line-height: 21px;
   text-align: right;
   color: #484848;
@@ -266,7 +266,7 @@
   font-family: Roboto;
   font-style: normal;
   font-weight: bold;
-  font-size: 18px;
+  font-size: 1vw;
   line-height: 21px;
   padding-top: 1vh;
   flex: 1 1 0;
@@ -277,7 +277,7 @@
   font-family: Roboto;
   font-style: normal;
   font-weight: bold;
-  font-size: 18px;
+  font-size: 1vw;
   line-height: 21px;
   padding-top: 1vh;
   color: #484848;
@@ -291,7 +291,7 @@
   font-family: Roboto;
   font-style: normal;
   font-weight: bold;
-  font-size: 12px;
+  font-size: 0.7vw;
   line-height: 14px;
 
   padding-top: 1vh;
@@ -324,7 +324,7 @@
   font-family: Roboto;
   font-style: normal;
   font-weight: bold;
-  font-size: 14px;
+  font-size: 0.7vw;
   line-height: 16px;
   padding: 0.3vw;
   padding-left: 0.4vw;
@@ -340,7 +340,7 @@
   font-family: Roboto;
   font-style: normal;
   font-weight: bold;
-  font-size: 24px;
+  font-size: 1.4vw;
   line-height: 28px;
 
   color: #000000;
@@ -360,7 +360,7 @@
   font-family: Roboto;
   font-style: normal;
   font-weight: bold;
-  font-size: 14px;
+  font-size: 0.8vw;
   line-height: 16px;
   padding-top: 1vh;
   padding-bottom: 1vh;
@@ -378,7 +378,7 @@
   font-family: Roboto;
   font-style: normal;
   font-weight: bold;
-  font-size: 18px;
+  font-size: 1vw;
   line-height: 21px;
 
   color: rgba(255, 0, 0, 0.5);
@@ -389,7 +389,7 @@
   font-family: Roboto;
   font-style: normal;
   font-weight: bold;
-  font-size: 18px;
+  font-size: 1vw;
   line-height: 21px;
   margin-top: 1vh;
   color: rgba(255, 0, 0, 0.5);
