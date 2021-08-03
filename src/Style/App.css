@@ -112,7 +112,7 @@
   flex: 1 1 0;
   display: flex;
   flex-direction: column;
-  padding-left: 10vw;
+  padding-left: 1vw;
 }
 .NameAndYear {
   font-family: Roboto;
@@ -284,7 +284,6 @@
   flex: 1 1 0;
   display: flex;
   flex-direction: column;
-  padding-left: 10vw;
 }
 
 .NameAndYearResult {
