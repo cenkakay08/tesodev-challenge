@@ -1,13 +1,13 @@
 import React from "react";
 
-const Posts = ({ posts, loading }) => {
+const Entries = ({ entries, loading }) => {
   if (loading) {
     return <h2>Loading...</h2>;
   }
 
   return (
     <div>
-      {posts.map((entry, index) => (
+      {entries.map((entry, index) => (
         <div className="ResultsContainer" key={index}>
           <div className="FirstLineResult">
             <div className="CountryAndCityResult">
@@ -27,4 +27,4 @@ const Posts = ({ posts, loading }) => {
   );
 };
 
-export default Posts;
+export default Entries;

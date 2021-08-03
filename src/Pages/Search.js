@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import JsonData from "../Data/mockData.json";
-import Posts from "../Components/Posts";
+import Entries from "../Components/Entries";
 import Pagination from "../Components/Pagination";
 import { StyledSubInput } from "../Style/StyledComponents";
 
@@ -11,28 +11,28 @@ const Search = () => {
   const [errorColor, setErrorColor] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
   const [isSortOpened, setIsSortOpened] = useState(false);
-  const [posts, setPosts] = useState([]);
-  const [untouchedPosts, setUntouchedPosts] = useState([]);
+  const [entries, setEntries] = useState([]);
+  const [untouchedEntries, setUntouchedEntries] = useState([]);
   const [loading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
-  const [postsPerPage] = useState(6);
+  const [entriesPerPage] = useState(6);
 
   const sortByNameAscending = () => {
-    const sortedByNameAscending = [...posts].sort(function (a, b) {
+    const sortedByNameAscending = [...entries].sort(function (a, b) {
       return a[0].localeCompare(b[0]);
     });
-    setPosts(sortedByNameAscending);
+    setEntries(sortedByNameAscending);
     setIsSortOpened(false);
   };
   const sortByNameDescending = () => {
-    const sortedByNameDescending = [...posts].sort(function (a, b) {
+    const sortedByNameDescending = [...entries].sort(function (a, b) {
       return b[0].localeCompare(a[0]);
     });
-    setPosts(sortedByNameDescending);
+    setEntries(sortedByNameDescending);
     setIsSortOpened(false);
   };
   const sortByYearAscending = () => {
-    const sortedByYearAscending = [...posts].sort(function (b, a) {
+    const sortedByYearAscending = [...entries].sort(function (b, a) {
       return (
         new Date(
           b[3].substring(6, 10),
@@ -46,11 +46,11 @@ const Search = () => {
         )
       );
     });
-    setPosts(sortedByYearAscending);
+    setEntries(sortedByYearAscending);
     setIsSortOpened(false);
   };
   const sortByYearDescending = () => {
-    const sortedByYearDescending = [...posts].sort(function (a, b) {
+    const sortedByYearDescending = [...entries].sort(function (a, b) {
       return (
         new Date(
           b[3].substring(6, 10),
@@ -64,42 +64,42 @@ const Search = () => {
         )
       );
     });
-    setPosts(sortedByYearDescending);
+    setEntries(sortedByYearDescending);
     setIsSortOpened(null);
   };
   const handleInputChange = (e) => {
-    const filtered = untouchedPosts.filter(
-      (post) =>
-        post[0].toLowerCase().includes(e.target.value.toLowerCase()) ||
-        post[4].toLowerCase().includes(e.target.value.toLowerCase()) ||
-        post[5].toLowerCase().includes(e.target.value.toLowerCase())
+    const filtered = untouchedEntries.filter(
+      (entry) =>
+        entry[0].toLowerCase().includes(e.target.value.toLowerCase()) ||
+        entry[4].toLowerCase().includes(e.target.value.toLowerCase()) ||
+        entry[5].toLowerCase().includes(e.target.value.toLowerCase())
     );
     if (e.target.value.length > 0 && filtered.length === 0) {
       setErrorColor(true);
     } else {
       setErrorColor(false);
     }
-    setPosts(filtered);
+    setEntries(filtered);
     paginate(1);
   };
 
   useEffect(() => {
-    setUntouchedPosts(JsonData.data);
+    setUntouchedEntries(JsonData.data);
     const { searchQuery, results } = location.state;
     setSearchTerm(searchQuery);
     if (searchQuery.length === 0) {
-      setPosts(JsonData.data);
+      setEntries(JsonData.data);
     } else if (results !== null) {
-      setPosts(results);
+      setEntries(results);
     } else {
-      setPosts([]);
+      setEntries([]);
       setErrorColor(true);
     }
   }, []);
 
-  const indexOfLastPost = currentPage * postsPerPage;
-  const indexOfFirstPost = indexOfLastPost - postsPerPage;
-  const currentPosts = posts.slice(indexOfFirstPost, indexOfLastPost);
+  const indexOfLastEntry = currentPage * entriesPerPage;
+  const indexOfFirstEntry = indexOfLastEntry - entriesPerPage;
+  const currentEntries = entries.slice(indexOfFirstEntry, indexOfLastEntry);
 
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
@@ -121,7 +121,7 @@ const Search = () => {
       </div>
 
       <div id="Pagination">
-        {posts.length !== 0 ? (
+        {entries.length !== 0 ? (
           <div onClick={() => setIsSortOpened(true)} className="Sort">
             <img id="SortIcon" src="./SortIcon.png" alt="SortIcon"></img>
             <span id="SortText">Order By</span>
@@ -144,10 +144,10 @@ const Search = () => {
             </div>
           </div>
         ) : null}
-        <Posts posts={currentPosts} loading={loading} />
+        <Entries entries={currentEntries} loading={loading} />
         <Pagination
-          postsPerPage={postsPerPage}
-          totalPosts={posts.length}
+          entriesPerPage={entriesPerPage}
+          totalEntries={entries.length}
           paginate={paginate}
           currentPage={currentPage}
         />

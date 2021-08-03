@@ -37,3 +37,24 @@ export const StyledSubInput = styled.input`
   border-color: ${(props) => (props.errorColor ? "#FF0000" : "#000000")};
   color: ${(props) => (props.errorColor ? "rgba(255, 0, 0, 0.5)" : "#888888")};
 `;
+
+export const StyledSpan = styled.span`
+  margin-right: 0.5vw;
+  margin-left: 0.5vw;
+  background: ${(props) =>
+    props.tabIndex === props.selectedPage ? "#204080" : "#ffffff;"};
+  border: 1px solid #484848;
+  box-sizing: content-box;
+  border-radius: 4px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 16px;
+  padding: 0.3vw;
+  padding-left: 0.4vw;
+  padding-right: 0.4vw;
+
+  color: ${(props) =>
+    props.tabIndex === props.selectedPage ? "#ffffff" : "#484848"};
+`;
