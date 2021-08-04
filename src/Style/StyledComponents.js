@@ -8,7 +8,7 @@ export const StyledInput = styled.input`
   font-family: Roboto;
   font-style: normal;
   font-weight: bold;
-  font-size: 18px;
+  font-size: 1vw;
   line-height: 21px;
   border-color: ${(props) => (props.errorColor ? "#FF0000" : "#000000")};
   color: ${(props) => (props.errorColor ? "rgba(255, 0, 0, 0.5)" : "#888888")};
@@ -30,7 +30,7 @@ export const StyledSubInput = styled.input`
   font-family: Roboto;
   font-style: normal;
   font-weight: bold;
-  font-size: 18px;
+  font-size: 1vw;
   line-height: 21px;
   color: #484848;
   outline: none;
@@ -49,7 +49,7 @@ export const StyledSpan = styled.span`
   font-family: Roboto;
   font-style: normal;
   font-weight: bold;
-  font-size: 14px;
+  font-size: 0.7vw;
   line-height: 16px;
   padding: 0.3vw;
   padding-left: 0.4vw;
