@@ -169,7 +169,7 @@
 }
 #Pagination {
   grid-area: Pagination;
-  width: 50vw;
+  width: 52vw;
   margin-left: 16vw;
 }
 #SubLogo {
@@ -233,6 +233,7 @@
   -webkit-align-items: flex-start;
   -ms-flex-align: start;
   align-items: flex-start;
+  margin-right: 1.5vw;
 }
 #SortIcon {
   vertical-align: middle;
@@ -250,6 +251,8 @@
 
 .ResultsContainer {
   margin-top: 3vh;
+  padding-left: 1vw;
+  padding-right: 1vw;
 }
 .ResultsContainer:hover {
   background: #c4c4c4;
