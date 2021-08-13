@@ -17,7 +17,7 @@ const Pagination = ({
     <div className="pagination">
       {pageNumbers.length > 0 ? (
         <div>
-          {pageNumbers.length > 1 ? (
+          {pageNumbers.length > 1 && currentPage !== 1 ? (
             <span
               tabIndex={99}
               className="page-item"
@@ -66,7 +66,8 @@ const Pagination = ({
                   </span>
                 );
               })}
-          {pageNumbers.length > 1 ? (
+          {pageNumbers.length > 1 &&
+          currentPage !== pageNumbers.slice(-1).pop() ? (
             <span
               className="page-item"
               tabIndex={98}
