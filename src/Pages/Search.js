@@ -1,12 +1,15 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useLocation } from "react-router-dom";
 import JsonData from "../Data/mockData.json";
 import Entries from "../Components/Entries";
 import Pagination from "../Components/Pagination";
 import { StyledSubInput } from "../Style/StyledComponents";
+import filterArrayByQuery from "../Functions/filterArrayByQuery";
+import sortArrayByType from "../Functions/sortArrayByType";
 
 const Search = () => {
   const location = useLocation();
+  const sortMenuRef = useRef();
 
   const [errorColor, setErrorColor] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
@@ -17,69 +20,13 @@ const Search = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [entriesPerPage] = useState(6);
 
-  const sortByNameAscending = () => {
-    const sortedByNameAscending = [...entries].sort(function (a, b) {
-      return a[0].localeCompare(b[0]);
-    });
-    setEntries(sortedByNameAscending);
-    setIsSortOpened(false);
-  };
-  const sortByNameDescending = () => {
-    const sortedByNameDescending = [...entries].sort(function (a, b) {
-      return b[0].localeCompare(a[0]);
-    });
-    setEntries(sortedByNameDescending);
-    setIsSortOpened(false);
-  };
-  const sortByYearAscending = () => {
-    const sortedByYearAscending = [...entries].sort(function (b, a) {
-      return (
-        new Date(
-          b[3].substring(6, 10),
-          b[3].substring(3, 5),
-          b[3].substring(0, 2)
-        ) -
-        new Date(
-          a[3].substring(6, 10),
-          a[3].substring(3, 5),
-          a[3].substring(0, 2)
-        )
-      );
-    });
-    setEntries(sortedByYearAscending);
-    setIsSortOpened(false);
-  };
-  const sortByYearDescending = () => {
-    const sortedByYearDescending = [...entries].sort(function (a, b) {
-      return (
-        new Date(
-          b[3].substring(6, 10),
-          b[3].substring(3, 5),
-          b[3].substring(0, 2)
-        ) -
-        new Date(
-          a[3].substring(6, 10),
-          a[3].substring(3, 5),
-          a[3].substring(0, 2)
-        )
-      );
-    });
-    setEntries(sortedByYearDescending);
-    setIsSortOpened(null);
-  };
   const handleInputChange = (e) => {
-    const filtered = untouchedEntries.filter(
-      (entry) =>
-        entry[0].toLowerCase().includes(e.target.value.toLowerCase()) ||
-        entry[4].toLowerCase().includes(e.target.value.toLowerCase()) ||
-        entry[5].toLowerCase().includes(e.target.value.toLowerCase())
-    );
+    const filtered = filterArrayByQuery(untouchedEntries, e.target.value);
     if (e.target.value.length > 0 && filtered.length === 0) {
       setErrorColor(true);
     } else {
       setErrorColor(false);
     }
-
     setEntries(filtered);
     paginate(1);
   };
@@ -97,6 +44,22 @@ const Search = () => {
       setErrorColor(true);
     }
   }, []);
+  useEffect(() => {
+    const handleOutSideClick = (e) => {
+      if (
+        isSortOpened &&
+        sortMenuRef.current &&
+        !sortMenuRef.current.contains(e.target)
+      ) {
+        setIsSortOpened(false);
+      }
+    };
+    document.addEventListener("mousedown", handleOutSideClick);
+
+    return () => {
+      document.removeEventListener("mousedown", handleOutSideClick);
+    };
+  }, [isSortOpened]);
 
   const indexOfLastEntry = currentPage * entriesPerPage;
   const indexOfFirstEntry = indexOfLastEntry - entriesPerPage;
@@ -124,24 +87,54 @@ const Search = () => {
 
       <div id="Pagination">
         {entries.length !== 0 ? (
-          <div onClick={() => setIsSortOpened(true)} className="Sort">
-            <img id="SortIcon" src="./SortIcon.png" alt="SortIcon"></img>
-            <span id="SortText">Order By</span>
+          <div className="Sort">
+            <div onClick={() => setIsSortOpened(true)}>
+              <img id="SortIcon" src="./SortIcon.png" alt="SortIcon"></img>
+              <span id="SortText">Order By</span>
+            </div>
           </div>
         ) : null}
 
         {isSortOpened ? (
-          <div className="SortMenu">
-            <div className="SortMenuText" onClick={sortByNameAscending}>
+          <div className="SortMenu" ref={sortMenuRef}>
+            <div
+              className="SortMenuText"
+              onClick={() => {
+                const sorted = sortArrayByType(entries, "NameAsc");
+                setEntries(sorted);
+                setIsSortOpened(null);
+              }}
+            >
               Name Ascending
             </div>
-            <div className="SortMenuText" onClick={sortByNameDescending}>
+            <div
+              className="SortMenuText"
+              onClick={() => {
+                const sorted = sortArrayByType(entries, "NameDes");
+                setEntries(sorted);
+                setIsSortOpened(null);
+              }}
+            >
               Name Descending
             </div>
-            <div className="SortMenuText" onClick={sortByYearAscending}>
+            <div
+              className="SortMenuText"
+              onClick={() => {
+                const sorted = sortArrayByType(entries, "YearAsc");
+                setEntries(sorted);
+                setIsSortOpened(null);
+              }}
+            >
               Year Ascending
             </div>
-            <div className="SortMenuText" onClick={sortByYearDescending}>
+            <div
+              className="SortMenuText"
+              onClick={() => {
+                const sorted = sortArrayByType(entries, "YearDes");
+                setEntries(sorted);
+                setIsSortOpened(null);
+              }}
+            >
               Year Descending
             </div>
           </div>

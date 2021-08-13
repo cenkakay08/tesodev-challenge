@@ -3,27 +3,23 @@ import JsonData from "../Data/mockData.json";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { StyledInput } from "../Style/StyledComponents";
+import filterArrayByQuery from "../Functions/filterArrayByQuery";
 
 const Home = () => {
-  const [errorColor, setErrorColor] = useState(null);
+  const [errorColor, setErrorColor] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
   const [resultsSuggestions, setResultsSuggestions] = useState(null);
   const [allEntries, setAllEntries] = useState([]);
   const handleInputChange = (e) => {
     setSearchTerm(e.target.value);
     if (e.target.value !== "") {
-      var filteredEntries = allEntries.filter(
-        (entry) =>
-          entry[0].toLowerCase().includes(e.target.value.toLowerCase()) ||
-          entry[4].toLowerCase().includes(e.target.value.toLowerCase()) ||
-          entry[5].toLowerCase().includes(e.target.value.toLowerCase())
-      );
+      const filteredEntries = filterArrayByQuery(allEntries, e.target.value);
       if (filteredEntries.length === 0) {
         setResultsSuggestions(null);
         setErrorColor(true);
       } else {
         setResultsSuggestions(filteredEntries);
-        setErrorColor(null);
+        setErrorColor(false);
       }
     } else {
       setResultsSuggestions(null);
