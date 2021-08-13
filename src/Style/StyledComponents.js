@@ -5,7 +5,7 @@ export const StyledInput = styled.input`
   border: 1px solid;
   box-sizing: border-box;
   border-radius: 8px;
-  font-family: Roboto;
+  font-family: "Roboto";
   font-style: normal;
   font-weight: bold;
   font-size: 1vw;
@@ -27,7 +27,7 @@ export const StyledSubInput = styled.input`
   height: 6vh;
   margin-left: 3vw;
   padding-left: 1vw;
-  font-family: Roboto;
+  font-family: "Roboto";
   font-style: normal;
   font-weight: bold;
   font-size: 1vw;
@@ -46,7 +46,7 @@ export const StyledSpan = styled.span`
   border: 1px solid #484848;
   box-sizing: content-box;
   border-radius: 4px;
-  font-family: Roboto;
+  font-family: "Roboto";
   font-style: normal;
   font-weight: bold;
   font-size: 0.7vw;
