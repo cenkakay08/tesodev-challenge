@@ -43,7 +43,7 @@ const Search = () => {
       setEntries([]);
       setErrorColor(true);
     }
-  }, []);
+  }, [location]);
 
   useEffect(() => {
     const handleOutSideClick = (e) => {
