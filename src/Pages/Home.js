@@ -10,6 +10,7 @@ const Home = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [resultsSuggestions, setResultsSuggestions] = useState(null);
   const [allEntries, setAllEntries] = useState([]);
+
   const handleInputChange = (e) => {
     setSearchTerm(e.target.value);
     if (e.target.value !== "") {
@@ -25,9 +26,11 @@ const Home = () => {
       setResultsSuggestions(null);
     }
   };
+
   useEffect(() => {
     setAllEntries(JsonData.data);
   }, []);
+
   return (
     <div className="Home">
       <div className="LogoTitle">

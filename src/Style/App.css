@@ -29,7 +29,7 @@
   margin-right: 10vw;
 }
 #LogoText {
-  font-family: Roboto;
+  font-family: "Roboto";
   font-style: normal;
   font-weight: bold;
   font-size: 1vw;
@@ -49,7 +49,7 @@
   background: #204080;
   border-radius: 8px;
   margin-left: 2vw;
-  font-family: Roboto;
+  font-family: "Roboto";
   font-style: normal;
   font-weight: bold;
   font-size: 1vw;
@@ -90,7 +90,7 @@
 }
 
 .CountryAndCity {
-  font-family: Roboto;
+  font-family: "Roboto";
   font-style: normal;
   font-weight: bold;
   font-size: 1vw;
@@ -101,7 +101,7 @@
   flex: 1 1 0;
 }
 .Email {
-  font-family: Roboto;
+  font-family: "Roboto";
   font-style: normal;
   font-weight: bold;
   font-size: 1vw;
@@ -115,7 +115,7 @@
   padding-left: 1vw;
 }
 .NameAndYear {
-  font-family: Roboto;
+  font-family: "Roboto";
   font-style: normal;
   font-weight: bold;
   font-size: 0.7vw;
@@ -131,7 +131,7 @@
   margin-right: 3vw;
 }
 #ShowMore {
-  font-family: Roboto;
+  font-family: "Roboto";
   font-style: normal;
   font-weight: bold;
   font-size: 1vw;
@@ -188,7 +188,7 @@
 #SubSearchButton {
   background: #204080;
   border-radius: 8px;
-  font-family: Roboto;
+  font-family: "Roboto";
   font-style: normal;
   font-weight: bold;
   font-size: 1vw;
@@ -204,7 +204,7 @@
 #SubSearchButton:hover {
   background: #4f75c2;
   border-radius: 8px;
-  font-family: Roboto;
+  font-family: "Roboto";
   font-style: normal;
   font-weight: bold;
   font-size: 1vw;
@@ -240,7 +240,7 @@
   margin-right: 0.5vw;
 }
 #SortText {
-  font-family: Roboto;
+  font-family: "Roboto";
   font-style: normal;
   font-weight: bold;
   font-size: 1vw;
@@ -266,7 +266,7 @@
 }
 
 .CountryAndCityResult {
-  font-family: Roboto;
+  font-family: "Roboto";
   font-style: normal;
   font-weight: bold;
   font-size: 1vw;
@@ -277,7 +277,7 @@
 }
 
 .EmailResult {
-  font-family: Roboto;
+  font-family: "Roboto";
   font-style: normal;
   font-weight: bold;
   font-size: 1vw;
@@ -290,7 +290,7 @@
 }
 
 .NameAndYearResult {
-  font-family: Roboto;
+  font-family: "Roboto";
   font-style: normal;
   font-weight: bold;
   font-size: 0.7vw;
@@ -323,7 +323,7 @@
   border: 1px solid #484848;
   box-sizing: content-box;
   border-radius: 4px;
-  font-family: Roboto;
+  font-family: "Roboto";
   font-style: normal;
   font-weight: bold;
   font-size: 0.7vw;
@@ -339,7 +339,7 @@
   color: #ffffff;
 }
 .DotPaginationItem {
-  font-family: Roboto;
+  font-family: "Roboto";
   font-style: normal;
   font-weight: bold;
   font-size: 1.4vw;
@@ -359,7 +359,7 @@
   z-index: 3;
 }
 .SortMenuText {
-  font-family: Roboto;
+  font-family: "Roboto";
   font-style: normal;
   font-weight: bold;
   font-size: 0.8vw;
@@ -377,7 +377,7 @@
   color: #ffffff;
 }
 #SubErrorText {
-  font-family: Roboto;
+  font-family: "Roboto";
   font-style: normal;
   font-weight: bold;
   font-size: 1vw;
@@ -388,7 +388,7 @@
 }
 
 #MainErrorText {
-  font-family: Roboto;
+  font-family: "Roboto";
   font-style: normal;
   font-weight: bold;
   font-size: 1vw;
