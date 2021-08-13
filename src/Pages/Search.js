@@ -102,7 +102,7 @@ const Search = () => {
               onClick={() => {
                 const sorted = sortArrayByType(entries, "NameAsc");
                 setEntries(sorted);
-                setIsSortOpened(null);
+                setIsSortOpened(false);
               }}
             >
               Name Ascending
@@ -112,7 +112,7 @@ const Search = () => {
               onClick={() => {
                 const sorted = sortArrayByType(entries, "NameDes");
                 setEntries(sorted);
-                setIsSortOpened(null);
+                setIsSortOpened(false);
               }}
             >
               Name Descending
@@ -122,7 +122,7 @@ const Search = () => {
               onClick={() => {
                 const sorted = sortArrayByType(entries, "YearAsc");
                 setEntries(sorted);
-                setIsSortOpened(null);
+                setIsSortOpened(false);
               }}
             >
               Year Ascending
@@ -132,7 +132,7 @@ const Search = () => {
               onClick={() => {
                 const sorted = sortArrayByType(entries, "YearDes");
                 setEntries(sorted);
-                setIsSortOpened(null);
+                setIsSortOpened(false);
               }}
             >
               Year Descending
